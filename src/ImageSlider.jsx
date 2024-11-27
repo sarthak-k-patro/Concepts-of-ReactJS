@@ -1,10 +1,8 @@
-import { useCallback } from "react";
-import styles from "./ImageSlider.module.css";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from "axios";
 const ImageSlider = () => {
   const [users, setUsers] = useState(null);
+  const [color, setColor] = useState("red");
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/albums")
       .then((response) => response.json())
@@ -17,8 +15,25 @@ const ImageSlider = () => {
       });
   }, []);
 
+  const h1Style = {
+    backgroundColor: color,
+  };
+  const changeColor = () => {
+    setColor((prevColor) => (prevColor === "red" ? "orange" : "red"));
+  };
   // console.log("data outside fetch :", dataToShow)
-  return <>{users && users.map((users) => <h1>{users.title}</h1>)}</>;
+  return (
+    <>
+      {users &&
+        users.map((users) => (
+          <h1
+            style={h1Style}
+            key={users.id}
+          >{`${users.title} + ${users.id}`}</h1>
+        ))}
+      <button onClick={changeColor}> toggle color </button>
+    </>
+  );
 };
 
 export default ImageSlider;
