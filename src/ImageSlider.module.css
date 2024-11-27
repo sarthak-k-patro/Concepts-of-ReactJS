@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+
+  /* padding: 5px; */
+}
+.img {
+  margin: 5px;
+}
