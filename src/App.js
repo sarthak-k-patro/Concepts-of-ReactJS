@@ -1,11 +1,11 @@
 // import styles from "./";
-import ImageSlider from "./ImageSlider";
+import AllAboutuseState from "./AllAboutuseState";
 import React from "react";
 function App() {
   return (
     <React.StrictMode>
       <div>
-        <ImageSlider />
+        <AllAboutuseState />
       </div>
     </React.StrictMode>
   );

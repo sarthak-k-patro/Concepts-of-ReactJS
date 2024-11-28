@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const ImageSlider = () => {
+const AllAboutuseState = () => {
   const [users, setUsers] = useState(null);
   const [color, setColor] = useState("orange");
   const [obj, setObj] = useState({
@@ -17,6 +17,7 @@ const ImageSlider = () => {
   const insideSetObj = (data) => {
     console.log("setting obj using setObj");
     setObj({ ...data, college: "IIIT-BH" });
+    console.log("obj after update: ", obj);
   };
 
   useEffect(() => {
@@ -62,11 +63,12 @@ const ImageSlider = () => {
             >{`${user.title} + ${user.id}`}</h1>
             <h1>{obj.name}</h1>
             <h2>{obj.college}</h2>
+            <h2>{obj.hobbies}</h2>
           </>
         ))}
-      <button onClick={insideSetObj}>click me !!!!!</button>
+      <button onClick={() => insideSetObj(obj)}>click me !!!!!</button>
     </>
   );
 };
 
-export default ImageSlider;
+export default AllAboutuseState;
