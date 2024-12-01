@@ -18,11 +18,10 @@ export const AllAboutuseEffect = () => {
       <h1>
         {" "}
         it will run infinitely because no dependency paramter given in useEffect
-        hook : count = {count}
+        hook : {count}
       </h1>
       <h2>
-        it will render once and again if you click this button :{" "}
-        {dependencyCount}
+        it will Increase if you click this button : {dependencyCount}
         <br></br>
         <button onClick={handleClick}> Increase counter </button>
       </h2>
