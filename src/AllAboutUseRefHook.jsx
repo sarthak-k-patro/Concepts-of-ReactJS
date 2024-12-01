@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 export const AllAboutuseRef = () => {
   const renderCount = useRef(0);
+  const focuInput = useRef();
+
   const [dependencyCount, setDependencyCount] = useState(0);
   console.log("Render count oustside useeffect: ", renderCount.current);
   const func = () => {
@@ -18,6 +20,8 @@ export const AllAboutuseRef = () => {
   };
   return (
     <>
+      <input ref={focuInput}></input>
+
       <h2>
         Render Count (How many time the Ui has rendered) : {renderCount.current}
         <br></br>
@@ -30,6 +34,13 @@ export const AllAboutuseRef = () => {
       </h2>
       <br></br>
       <hr></hr>
+      <button
+        onClick={() => {
+          return focuInput.current.focus();
+        }}
+      >
+        Click here for Focus onInput
+      </button>
     </>
   );
 };
