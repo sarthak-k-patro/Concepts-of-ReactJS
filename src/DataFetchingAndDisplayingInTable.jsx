@@ -15,17 +15,17 @@ export default function SideEffects() {
     <>
       <table style={{ width: "100vw", borderCollapse: "collapse" }}>
         <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
+          <tr style={{ border: "1px solid black" }}>
+            <th style={{ border: "1px solid black" }}>ID</th>
+            <th style={{ border: "1px solid black" }}>Title</th>
           </tr>
         </thead>
         <tbody>
           {data.map((dataVal, index) => {
             return (
-              <tr key={dataVal.id}>
-                <td>{dataVal.id}</td>
-                <td>{dataVal.title}</td>
+              <tr key={dataVal.id} style={{ border: "1px solid black" }}>
+                <td style={{ border: "1px solid black" }}>{dataVal.id}</td>
+                <td style={{ border: "1px solid black" }}>{dataVal.title}</td>
               </tr>
             );
           })}
